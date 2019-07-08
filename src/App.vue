@@ -1,26 +1,32 @@
 <template>
   <div id="app">
-    <Header msg="Welcome to Your Vue.js App"/>
+    <Header class="Header"/>
+    <StockPrice class="StockPrice"/>
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
+import StockPrice from './components/StockPrice'
 
 export default {
   name: 'app',
   components: {
-    Header
+    Header,
+    StockPrice
   }
 }
 </script>
 
 <style>
 #app {
+  display: flex;
+  flex-flow: column;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   margin-top: 60px;
+  align-items: center;
 }
 </style>

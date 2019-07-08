@@ -2,7 +2,6 @@
   <div class="header">
     <h1>Hey Kobi</h1>
     <h3>You might be wondering what is the Change Healthcare stock price today</h3>
-    
   </div>
 </template>
 
@@ -18,7 +17,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .header{
-    padding: 20px;
+    padding: 40px;
     margin: 20px;
     border: 1px solid black;
     border-radius: 20px;
