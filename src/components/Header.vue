@@ -1,7 +1,8 @@
 <template>
   <div class="header">
     <h1>Hey Kobi</h1>
-    <h3>You might be wondering what is the Change Healthcare stock price</h3>
+    <h3>You might be wondering what is the Change Healthcare stock price today</h3>
+    
   </div>
 </template>
 
