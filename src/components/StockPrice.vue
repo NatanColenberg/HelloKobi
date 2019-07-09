@@ -31,7 +31,7 @@ export default {
           this.loading = true;
           axios({
             method: 'get',
-            url: `stockpriceserver-service\\?symbol=${this.stockSymbol}`,
+            url: `http://stockpriceserver-service/?symbol=${this.stockSymbol}`,
             responseType: 'json'
           })
             .then((response) => {
