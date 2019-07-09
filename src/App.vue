@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <Header class="Header"/>
-    <StockPrice class="StockPrice"/>
+    <StockPrice class="StockPrice" 
+    stockSymbol="CHNGU"
+    stockName="Change Healthcare Inc"/>
   </div>
 </template>
 
