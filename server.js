@@ -3,7 +3,7 @@ var request = require('request');
 var app = express();
 
 // Serve all the files in '/dist' directory
-app.use(express.static('./dist'));
+app.use(express.static('./'));
 
 app.get('/StockPrice', (req, res) => {
 
