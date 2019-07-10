@@ -29,12 +29,15 @@ export default {
   methods:{
       GetStockPrice(){
           this.loading = true;
-          axios.get(`http://35.232.142.166/stockprice/?symbol=CHNG`)
-          // axios({
-          //   method: 'get',
-          //   url: `http://35.232.142.166/stockprice/?symbol=CHNG`,
-          //   responseType: 'json'
-          // })
+          // axios.get(`http://35.232.142.166/stockprice/?symbol=CHNG`)
+          axios({
+            method: 'get',
+            url: `http://35.232.142.166/stockprice/?symbol=CHNG`,
+            responseType: 'json',
+            headers:{
+              'Access-Control-Allow-Origin': '*'
+            }
+          })
             .then((response) => {
               if(response.status == 200){
                 this.stockPrice = response.data.price;
