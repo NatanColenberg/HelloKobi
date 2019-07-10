@@ -7,8 +7,8 @@ app.use(express.static('./'));
 
 app.get('/StockPrice', (req, res) => {
 
-  request(`http://localhost:3001/stockprice/?symbol=${req.query.symbol}`, function(err, stockRes, body){
-  // request(`http://stockpriceserver-service/stockprice/?symbol=${req.query.symbol}`, function(err, stockRes, body){
+  //request(`http://localhost:3001/stockprice/?symbol=${req.query.symbol}`, function(err, stockRes, body){
+  request(`http://stockpriceserver-service/stockprice/?symbol=${req.query.symbol}`, function(err, stockRes, body){
     
     if (err) {
       console.error(err);
