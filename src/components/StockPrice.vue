@@ -31,7 +31,7 @@ export default {
           this.loading = true;
           axios({
             method: 'get',
-            url: `/StockPrice/?symbol=CHNG`,
+            url: `/StockPrice/?symbol=${this.stockSymbol}`,
             responseType: 'json',
             headers:{
               'Access-Control-Allow-Origin': '*'
@@ -65,7 +65,7 @@ export default {
     justify-self: center;
 
     padding: 10px;
-    margin: 10px;
+    margin: 20px;
     width: 25%;
 
     border: 3px solid rgb(0, 0, 0);

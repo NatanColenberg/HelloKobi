@@ -2,7 +2,7 @@
   <div id="app">
     <Header class="Header"/>
     <StockPrice class="StockPrice" 
-    stockSymbol="CHNGU"
+    stockSymbol="CHNG"
     stockName="Change Healthcare Inc"/>
   </div>
 </template>
@@ -28,7 +28,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  margin-top: 60px;
   align-items: center;
 }
 </style>

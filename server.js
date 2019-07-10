@@ -3,12 +3,12 @@ var request = require('request');
 var app = express();
 
 // Serve all the files in '/dist' directory
-app.use(express.static('./'));
+app.use(express.static('./dist'));
 
 app.get('/StockPrice', (req, res) => {
 
-  //request(`http://localhost:3001/stockprice/?symbol=${req.query.symbol}`, function(err, stockRes, body){
-  request(`http://stockpriceserver-service/stockprice/?symbol=${req.query.symbol}`, function(err, stockRes, body){
+  request(`http://localhost:3001/stockprice/?symbol=${req.query.symbol}`, function(err, stockRes, body){
+  // request(`http://stockpriceserver-service/stockprice/?symbol=${req.query.symbol}`, function(err, stockRes, body){
     
     if (err) {
       console.error(err);
