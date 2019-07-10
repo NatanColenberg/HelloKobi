@@ -31,7 +31,7 @@ export default {
           this.loading = true;
           axios({
             method: 'get',
-            url: `http://stockpriceserver-service/?symbol=CHNGU`,
+            url: `http://10.27.248.232/stockprice/?symbol=CHNG`,
             responseType: 'json'
           })
             .then((response) => {
