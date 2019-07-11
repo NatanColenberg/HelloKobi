@@ -6,19 +6,31 @@
     <h4>
       This site was delivered by a Docker Container Node running a simple NodeJs Web Server using Express.<br>
       The Web Server container uses another Docker Container to fetch the stock price from the Stock Price Server.<br>
-      The Stock Price Server is also a NodeJs server that is receiving a stock symbol (CHNG - Change Healthcare)<br>
-      and fetches the data from Yahoo Finance API.<br>
-      All containers are hosted in GCP (Google Cloud Platform) using the GKE (Google Kubernetes Engine)
     </h4>
+    <h3 class="moreInfo" v-on:click="GetMoreInfo">
+      For more information click here
+      <i class="fa fa-info-circle"></i>
+    </h3>
     
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'Header',
   props: {
 
+  },
+  methods:{
+    GetMoreInfo(){
+      axios({
+            method: 'get',
+            url: `/Info`,
+            responseType: 'document',
+          });
+    }
   }
 }
 </script>
@@ -46,5 +58,13 @@ export default {
     padding: 10px;
     text-align: center;
     line-height: 35px;
+  }
+  .moreInfo{
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+  }
+  .moreInfo:hover{
+    color: rgb(250, 255, 182);
   }
 </style>

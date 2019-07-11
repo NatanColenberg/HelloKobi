@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Hello Kobi - Documentation and Information</title>
+    <meta charset="utf-8">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+
+    <h1>Docker POC Project</h1>
+
+    <h3>Project Info:</h3>
+    <p>
+        This project is a POC for Docker Containers inner communication.<br>
+        All containers are hosted in GCP (Google Cloud Platform) using the GKE (Google Kubernetes Engine).<br>
+        The first container is the Web Server, it's a simple NodeJs server using Express.<br>
+        This Web Server is serving all client-side reasources for the app as well as fetching data from the second docker container.<br>
+        The second container is the Stock Price Server, also using NodeJs to recieve the stock symbol from a client<br>
+        and return the price of that stock from Yahoo Finence API (in our example stock symbol = 'CHNG' - Change Healthcare).<br>
+        The Web Server communicates with the Stock Price Server using Local DNS to expose it's service.<br>
+        The Web Server sits behinde a Load Balancer that exposes an external IP address to communicate with that container<br>
+        while the Stock Price Server is configured as a Cluster IP so that it does not exposes any external IP address<br>
+        and can only communicate with other containers in it's cluster using his internal IP or the local DNS name that is provided by it's service.
+    </p>
+
+    <h3>Github Projects:</h3>
+    <h4>Web Server: <a href="https://github.com/NatanColenberg/HelloKobi">NatanColenberg/HelloKobi</a></h4>
+    <h4>Stock Price Server: <a href="https://github.com/NatanColenberg/StockPriceServer">NatanColenberg/StockPriceServer</a></h4>
+
+    <h3>Resources I've learned for this project:</h3>
+    <h4>Docker: <a href="https://www.udemy.com/docker-mastery/">Docker Mastery</a></h4>
+    <h4>Kubernetes on GCP: <a href="https://www.udemy.com/learn-kubernetes-using-google-cloud-gcp-kubernetes-engine/">DevOps Toolkit</a></h4>
+
+    <h3>Google Cloud Platform:</h3>
+    <img class="image" src="./helloKobiCluster.jpg">
+    <img class="image" src="./helloKobiWorkloads.jpg">
+    <img class="image" src="./helloKobiServices.jpg">
+
+</body>
+  <style>
+      body{
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          margin: 20px;
+      }
+      h3{
+          text-decoration: underline;
+      }
+      p{
+        line-height: 20px;
+      }
+      .image{
+          border: 3px solid black;
+      }
+  </style>
+</html>

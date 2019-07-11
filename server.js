@@ -2,12 +2,16 @@ var express = require('express');
 var request = require('request');
 var app = express();
 
-// Serve all the files in '/dist' directory
+// Serve all the files in root directory
 app.use(express.static('./'));
+
+// Serve Info Page
+app.get('/Info', (req, res) => {
+  res.sendFile(path.join(__dirname + 'Info/Info.html'));
+});
 
 app.get('/StockPrice', (req, res) => {
 
-  //request(`http://localhost:3001/stockprice/?symbol=${req.query.symbol}`, function(err, stockRes, body){
   request(`http://stockpriceserver-service/stockprice/?symbol=${req.query.symbol}`, function(err, stockRes, body){
     
     if (err) {
