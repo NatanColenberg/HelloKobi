@@ -25,11 +25,7 @@ export default {
   },
   methods:{
     GetMoreInfo(){
-      axios({
-            method: 'get',
-            url: `/Info`,
-            responseType: 'document',
-          });
+      window.location.href = '/Info';
     }
   }
 }

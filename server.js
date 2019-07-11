@@ -7,7 +7,7 @@ app.use(express.static('./'));
 
 // Serve Info Page
 app.get('/Info', (req, res) => {
-  res.sendFile(path.join(__dirname + 'Info/Info.html'));
+  res.sendFile('Info/Info.html', { root: __dirname });
 });
 
 app.get('/StockPrice', (req, res) => {
