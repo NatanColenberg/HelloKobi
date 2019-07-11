@@ -4,7 +4,7 @@
     <h3>You might be wondering what's the new Change Healthcare stock is up to...?</h3>
     <h3>Don't worry.. I got you covered!</h3>
     <h4>
-      This site was delivered by a Docker Container Node running a simple NodeJs Web Server using Express.<br>
+      This site was delivered by a Docker Container running a simple NodeJs Web Server using Express.<br>
       The Web Server container uses another Docker Container to fetch the stock price from the Stock Price Server.<br>
     </h4>
     <h3 class="moreInfo" v-on:click="GetMoreInfo">
@@ -37,8 +37,7 @@ export default {
     display: flex;
     flex-flow: column;
     width: 100%;
-    padding: 40px;
-    background: linear-gradient(to bottom, #00b7ea 0%,#009ec3 100%);
+    background: linear-gradient(to bottom right, #59d0f1 0%,#076479 100%);
     color: rgb(255, 255, 255);
   }
   h1{

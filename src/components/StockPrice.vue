@@ -1,9 +1,17 @@
 <template>
   <div class="stockPriceContainer" v-on:click="GetStockPrice">
       <div v-show="loading" class="loader"></div>
-      <h2 v-show="!loading">{{stockName}}</h2>
-      <h3 v-show="!loading">Stock Symbol: {{stockSymbol}}</h3>
-      <h1 v-show="!loading" class="stockPrice">{{stockPrice}}$ (USD)</h1>
+      <div class="stockName" v-show="!loading">
+        <h2>{{stockName}}</h2>
+      </div>
+      <div class="stockSymbol" v-show="!loading">
+        <h3>Stock Symbol: <span class="symbol">{{stockSymbol}}</span></h3>
+      </div>
+      <div class="stockPrice" v-show="!loading">
+        <h1>{{stockPrice}}$ (USD)</h1>
+      </div>
+      
+
       <h4>{{priceDate}}</h4>
   </div>
 </template>
@@ -23,7 +31,7 @@ export default {
     return{
       stockPrice: "",
       priceDate: "",
-      loading: true,
+      loading: false,
     }
   },
   methods:{
@@ -59,28 +67,47 @@ export default {
   .stockPriceContainer{
     display: flex;
     flex-direction: column;
+    min-width: 150px;
     align-items: center;
     justify-content: center;
     justify-items: center;
     justify-self: center;
 
-    padding: 10px;
     margin: 20px;
-    width: 25%;
 
     border: 3px solid rgb(0, 0, 0);
     border-radius: 30px;
 
-    background: linear-gradient(to bottom right, rgba(15, 15, 89, 0.8) 0%,rgba(244, 42, 76, 0.8) 100%);
+    background: linear-gradient(to bottom right, rgba(36, 50, 172, 0.8) 0%,rgba(1, 1, 5, 0.8) 100%);
     color: rgb(255, 255, 255);
 
     cursor: pointer;
   }
   .stockPriceContainer:hover{
-    background: linear-gradient(to bottom right, rgba(15, 15, 89) 0%,rgba(244, 42, 76) 100%);
+
+  }
+  .stockName{
+    border-bottom: 3px solid black;
+    padding: 5px 25px;
+    background-color: #1D344E;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+  .stockSymbol{
+    border-bottom: 2px solid rgb(36, 36, 36);
+    width: 100%;
+    background-color: #297E7C;
+  }
+  .symbol{
+    background-color: black;
+    padding: 5px;
+    border-radius: 10px;
   }
   .stockPrice{
-    font-size: 40px;
+    background-color: #92C46D;
+    color: rgb(0, 1, 53);
+    width: 100%;
+    border-bottom: 2px solid rgb(36, 36, 36);
   }
 
   .loader {
